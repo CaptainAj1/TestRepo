@@ -26,7 +26,7 @@ $time_start=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
 			<?php } 
 	$num=$num+1;
    		}?>
-</table>
+</table><br>
 <?php 
 $time_end=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
 $execution_time=($time_end-$time_start);
