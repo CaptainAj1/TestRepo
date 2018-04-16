@@ -1,26 +1,25 @@
-<?php
-$time_start=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
-    
-    $ncount=0;
-	$num=2;?>
-
 <div align="center">
 <b>The first 1000 Prime numbers</b><br><br>
 <table border="1px solid" cellpadding="10">
 	<tr><th>Item #</th><th>Prime</th></tr>
-<?php while($ncount<1000)
+<?php
+$time_start=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
+    
+  $ncount=0;
+  $num=1;
+ while($ncount<1000)
 {
-	$count=0;
+	$div_count=0;
 		for($i=1;$i<=$num;$i++)
 		{
 			if($num%$i==0)
 			{
-				$count++;
+				$div_count++;
 			}
 		}
-	if($count<3)
-			{?>
-	<?php $ncount=$ncount+1;?>			
+	if($div_count==2)
+			{
+	    $ncount=$ncount+1;?>			
 	<tr><td align="center"><?php echo $ncount;?></td>
 	<td align="center"><?php echo $num;?></td></tr>				
 			<?php } 
