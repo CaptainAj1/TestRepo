@@ -4,7 +4,8 @@
 	<tr><th>Item #</th><th>Prime</th></tr>
 <?php
 $time_start=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
- function primeno($n){   
+ function primeno($n)
+ {   
   $ncount=0;
   $num=2;
  while($ncount<$n)
@@ -26,7 +27,8 @@ $time_start=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
 	$num=$num+1;
    		}
 	}
-	primeno(1000)?>
+	primeno(1000);
+	?>
 </table><br>
 <?php 
 $time_end=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
