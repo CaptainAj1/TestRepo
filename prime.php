@@ -1,34 +1,41 @@
+<?php 
+$time_start=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
+function primeLoop($number) 
+{
+    // Set default to true
+    $prime = true;
+    
+	for ($div = 2; $div < $number; $div++) 
+	{
+		
+		if (($number % $div) === 0) 
+		{
+            $prime = false;
+            return $prime;
+        }
+    }
+    // Return true or false
+    return $prime;
+}
+?>
+
 <div align="center">
 <b>The first 1000 Prime numbers</b><br><br>
 <table border="1px solid" cellpadding="10">
 	<tr><th>Item #</th><th>Prime</th></tr>
 <?php
-$time_start=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
- function primeno($n)
- {   
-  $ncount=0;
-  $num=2;
- while($ncount<$n)
-{
-	$div_count=0;
-		for($i=1;$i<=$num;$i++)
-		{
-			if($num%$i==0)
-			{
-				$div_count++;
-			}
-		}
-	if($div_count<3)
-			{
-	    $ncount=$ncount+1;?>			
-	<tr><td align="center"><?php echo $ncount;?></td>
-	<td align="center"><?php echo $num;?></td></tr>				
-			<?php } 
-	$num=$num+1;
-   		}
-	}
-	primeno(1000);
-	?>
+	$count=0;
+$i=2;
+while ($count<1000) {
+    if (primeLoop($i)) {
+		$count++;?>			
+	<tr><td align="center"><?php echo $count;?></td>
+	<td align="center"><?php echo $i;?></td></tr>		
+   <?php }
+    $i++;
+}
+
+?>	
 </table><br>
 <?php 
 $time_end=(microtime(true)-$_SERVER["REQUEST_TIME_FLOAT"])*1000;
